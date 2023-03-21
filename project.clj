@@ -1,9 +1,15 @@
-(defproject congraph "0.0.10"
-  :description "a neo4j connection management library based on conman"
+(defproject congraph "0.1.5"
+  :description "a db connection management library that copies heavly from conman but allows for multiple type of connections"
   :license {:name "Apache License, Version 2.0"
             :url "http://www.apache.org/licenses/LICENSE-2.0.html"}
-  :dependencies [[org.clojure/clojure "1.10.1"]
-                 [hugneo4j "0.1.0"]]
+  :dependencies [[com.layerware/hugsql-core "0.5.1"]
+                 [com.layerware/hugsql-adapter-next-jdbc "0.5.1"]
+                 [com.carouselapps/to-jdbc-uri "0.5.0"]
+                 [seancorfield/next.jdbc "1.1.613"]
+                 [hikari-cp "2.13.0"]
+                 [org.clojure/clojure "1.10.1"]
+                 [net.clojars.rams-services/hugcypher "0.1.2"]
+                 ]
   :profiles
-  {:dev
-   {:dependencies [[mount "0.1.16"]]}})
+  {:dev {:dependencies [[com.h2database/h2 "1.4.200"]
+                        [mount "0.1.16"]]}})
