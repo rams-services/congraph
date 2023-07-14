@@ -125,7 +125,8 @@
     :neo4j (cypher/connect type {:url (:url config)
                                  :port (:port config)
                                  :username (:username config)
-                                 :password (:password config)})
+                                 :password (:password config)
+                                 :opts (:opts config)})
     :arcadedb-http true
     :sql (do
            (hugsql/set-adapter! (next-adapter/hugsql-adapter-next-jdbc))
